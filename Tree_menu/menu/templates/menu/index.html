@@ -1,5 +1,5 @@
-{% load style %}
-{% load menu_tree %}
+{% load static %}
+{% load Tree_menu %}
 <!doctype html>
 
 <html lang="en">
@@ -9,7 +9,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Menu Tree demo</title>
-    <link rel="stylesheet" href="{% static "css/style.css" %}" />
+    <link rel="stylesheet" href="{% static "style/style.css" %}" />
 </head>
 <body>
     {% draw_menu "electronic" %}

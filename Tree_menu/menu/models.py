@@ -9,7 +9,7 @@ class Menu(models.Model):
         return " ".join(menu.title for menu in Menu.objects.filter(parent=self))
 
     @property
-    def submenu_items(self):
+    def menu_lite_items(self):
         return self.menu_set.get_queryset()
 
     def __str__(self) -> str:

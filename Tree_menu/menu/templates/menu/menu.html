@@ -1,0 +1,23 @@
+{% load menu %}
+{% if menu.main %}
+    <nav>
+
+        <ul>
+            {% for sub_menu in menu.node %}
+                <li>
+                    {% with link_slug='/'|add:sub_menu.title_slug|add:'/' %}
+                        <a href="{% url 'menu-item' sub_menu.title_slug %}"
+                           class="sub_item{% if request.get_full_path == link_slug %} active{% endif %}">{{ menu_lite.title }}</a>
+                        {% draw_menu_lite_item menu_lite %}
+                    {% endwith %}
+                </li>
+            {% endfor %}
+        </ul>
+
+    </nav>
+
+{% else %}
+    <div class="menu-not-found">
+        <p class="menu-not-found-text">{{ menu.error}}</p>
+    </div>
+{% endif %}
